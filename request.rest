@@ -1,0 +1,70 @@
+get http://localhost:5173/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsIm5hbWEiOiJEZWRpIEFmcml6YWwiLCJlbWFpbCI6ImRlZGlhZnJpemFsQGdtYWlsLmNvbSIsImlhdCI6MTcwMTg4NTg2NywiZXhwIjoxNzAxODg1OTE3fQ.SvHrp-EM-zo0cTR8E6jWk8pLtDIuTio5KNcz6CmakVg
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "npm" : "011022345",
+    "nama": "Dedi Afrizal",
+    "email": "dediafrizal@gmail.com",
+    "jurusan": "Teknik Informatika",
+    "Universitas": "Institut Teknologi Bandung",
+    "password": "123456",
+    "confpassword": "123456"
+
+}
+
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "dediafrizal@gmail.com",
+    "password": "123456"
+}
+
+###
+DELETE http://localhost:5000/logout
+
+
+###
+POST http://localhost:5000/universities
+Content-Type: application/json
+
+{
+    "kode_universitas": "U001",
+    "nama_universitas": "Institut Teknologi Bandung",
+    "daftar_jurusan": ["Teknik Informatika", "Manajemen", "Psikologi", "Manajemen Rekayasa Industri (MR)", "Teknik Bioenergi dan Kemurgi (TB)","Teknik Fisika (TF)", "Teknik Industri (TI)", "Teknik Kimia (TK)", "Teknik Pangan (PG)"]
+}
+###
+POST http://localhost:5000/buku
+Content-Type: application/json
+
+{
+    "nama_buku": "Luka Kata",
+    "author": "Candra Malik",
+    "category": "fiksi",
+    "deskripsi": "Puisi adalah laboratorium abadi umat manusia, dalam mengolah, memakai, dan memahami bahasa. Waktu, jarak, Tuhan, dan cinta di dalamnya jadi tema yang tak habis dikunyahnya. Sekumpulan puisi Luka Kata ini menjadi bukti, loyalitas sang penyair yang abadi. Memahami itu semua hingga melampaui indra, dengan prolific-nya sang Kyai Muda Candra. Semoga segala pembaca mendapat berkah, dari ini buku yang tfekun mencari hidayah.Selaik mursyid yang berdamai dengan waktu, ikhlas dengan kebenaran teguh sebuah batu. Maka hidup ke depan pun menjadi tentu, tersebab ridha Tuhan kita yang satu--Radhar Panca Dahpna.",
+    "img_cover": "./src/assets/img/book1.png",
+    "warna_cover": "Biru",
+    "status_buku": "Tersedia"
+}
+
+
+### Menambahkan Request Baru ###
+
+POST http://localhost:5000/requests
+Content-Type: application/json
+
+{
+  "id_mahasiswa": "2",
+  "data_buku": 1{
+    "judul": "Luka Kata",
+    "pengarang": "Candra Malik",
+    "tahun_terbit": 2019
+  },
+  "tgl_request": "2023-12-10T12:00:00Z"
+}
